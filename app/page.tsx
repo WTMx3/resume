@@ -1,6 +1,7 @@
 import Experience from "@/components/experience";
 import FeaturedProjects from "@/components/featured-projects";
 import Hero from "@/components/hero";
+import Leadership from "@/components/leadership";
 import ProfessionalSkills from "@/components/professional-skills";
 
 export const metadata = {
@@ -13,8 +14,9 @@ export default function Home() {
     <>
       <Hero />
       <div className="grow max-w-[920px] space-y-14 pb-16 md:pb-20">
+        <Experience />
         <ProfessionalSkills />
-        <Experience limit={2} showDetails={false} />
+        <Leadership />
         <FeaturedProjects />
       </div>
     </>
