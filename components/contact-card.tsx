@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import { getContentCollection } from "@/components/mdx/utils";
 
 export default function ContactCard() {
@@ -62,25 +60,6 @@ export default function ContactCard() {
             Send me an email
           </a>
 
-          <nav className="mt-5 border-t border-slate-200 pt-4 dark:border-slate-800" aria-label="Primary navigation">
-            <ul className="grid grid-cols-2 gap-2 text-sm font-medium">
-              {[
-                ["Home", "/"],
-                ["About", "/about"],
-                ["Portfolio", "/projects"],
-                ["Resume", "/resume"],
-              ].map(([label, href]) => (
-                <li key={href}>
-                  <Link
-                    className="block rounded-lg px-3 py-2 text-slate-500 transition-colors hover:bg-sky-50 hover:text-sky-600 dark:text-slate-400 dark:hover:bg-sky-500/10 dark:hover:text-sky-400"
-                    href={href}
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
         </div>
       </div>
     </aside>
