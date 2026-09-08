@@ -32,8 +32,10 @@ const aspekta = localFont({
 });
 
 const profile = getContentCollection("profile")[0];
+const siteUrl = new URL(String(profile.metadata.website));
 
 export const metadata = {
+  metadataBase: siteUrl,
   title: {
     default: `${String(profile.metadata.name)} | ${String(profile.metadata.role)}`,
     template: `%s | ${String(profile.metadata.name)}`,

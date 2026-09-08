@@ -14,7 +14,7 @@ export default function Footer() {
           <a className="hover:text-sky-500" href={String(profile.metadata.website)} target="_blank" rel="noreferrer">
             {String(profile.metadata.websiteLabel)}
           </a>
-          <a className="hover:text-sky-500" href="https://github.com/baas-dev/eazyhq" target="_blank" rel="noreferrer">
+          <a className="hover:text-sky-500" href="https://github.com/WTMx3" target="_blank" rel="noreferrer">
             GitHub
           </a>
         </nav>

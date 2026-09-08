@@ -36,7 +36,7 @@
     #h(10pt) | #h(10pt)
     #link("tel:+19727959884")[(972) 795-9884]
     #h(10pt) | #h(10pt)
-    #link("https://www.millers.wiki")[millers.wiki]
+    #link("https://thomasmiller.cv")[thomasmiller.cv]
   ]
 ]
 #section("Professional Summary")
@@ -197,6 +197,14 @@ A TypeScript service that renders structured content into polished PDFs and publ
 - *Customer communication:* Explained technical issues and solutions clearly to people with varied experience while maintaining a service-focused support experience.
 #v(3pt)
 ]
+#section("Education")
+#grid(columns: (1fr, auto), gutter: 8pt,
+  [#text(weight: "bold", fill: navy)[Bachelor of Business Administration (BBA), Information Technology — Emphasis in Application Development]],
+  [#text(size: 8.4pt, style: "italic", fill: muted)[Fall 2015 - Spring 2020]],
+)
+#text(weight: "semibold")[Texas Tech University]
+Completed a business and technology curriculum focused on application development, information systems, and practical software delivery.
+#v(3pt)
 #section("Leadership")
 #grid(columns: (1fr, auto), gutter: 8pt,
   [#text(weight: "bold", fill: navy)[Vice President, Quality Engineering Society, USAA]],
