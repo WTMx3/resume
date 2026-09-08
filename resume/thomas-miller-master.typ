@@ -83,8 +83,35 @@ A modular workspace operating system for projects, data, automation, content, an
 - Created a cross-platform Flutter interface backed by a Go service layer, PostgreSQL, Redis, and containerized deployment.
 - Established GitHub Actions and Docker-based delivery workflows for the API and web application.
 #v(3pt)
-#pagebreak()
+#grid(columns: (1fr, auto), gutter: 8pt,
+  [#text(weight: "bold", fill: navy)[Listings+]],
+  [#text(size: 8.4pt, style: "italic", fill: muted)[Portfolio snapshot]],
+)
+#text(weight: "semibold")[Full-Stack Software Engineer | 2025]
+An AI-assisted real-estate discovery experience that turns natural-language preferences into focused property results.
+*Technologies:* Next.js, React, TypeScript, Tailwind CSS, Cloudflare, Radix UI
+- Created a natural-language property search flow with city autocomplete and structured preference capture.
+- Developed responsive listing cards, comparison tables, image carousels, and property-detail experiences.
+- Built server-action boundaries for search and lead-submission integrations.
+- Composed accessible, reusable interface primitives with Radix UI, Tailwind CSS, and motion libraries.
+- Prepared the Next.js application for Cloudflare deployment with OpenNext.
+#v(3pt)
+#grid(columns: (1fr, auto), gutter: 8pt,
+  [#text(weight: "bold", fill: navy)[PDF Generator Service]],
+  [#text(size: 8.4pt, style: "italic", fill: muted)[Portfolio snapshot]],
+)
+#text(weight: "semibold")[Backend Software Engineer | 2024]
+A TypeScript service that renders structured content into polished PDFs and publishes them to S3-compatible storage.
+*Technologies:* TypeScript, Express, Puppeteer, AWS SDK, Docker
+- Designed a small Express API for document-generation requests.
+- Implemented reusable cover and content-page layouts for structured project data.
+- Integrated Puppeteer and Chromium for predictable server-side PDF rendering.
+- Added S3-compatible object storage and public file URL responses.
+- Containerized the service for repeatable builds and deployment.
+- Added temporary-file cleanup and environment-driven configuration.
+#v(3pt)
 #section("Professional Experience")
+#block(breakable: false)[
 #grid(columns: (1fr, auto), gutter: 8pt,
   [#text(weight: "bold", fill: navy)[BAAS Software]],
   [#text(size: 8.4pt, style: "italic", fill: muted)[June 2022 - Present]],
@@ -93,13 +120,18 @@ A modular workspace operating system for projects, data, automation, content, an
   [#text(weight: "semibold")[Senior Software Engineer]],
   [#text(size: 8.4pt, fill: muted)[Remote]],
 )
-- *DevOps and site reliability:* Collaborated with DevOps and SRE teams to improve deployment pipelines, reliability, and downtime, helping achieve 99.9% uptime and reduce release times by 40%.
-- *CI/CD automation:* Implemented GitHub Actions pipelines that streamlined software delivery and reduced deployment time and update-related downtime.
-- *Observability:* Improved monitoring and incident response with Prometheus, Grafana, and Kibana.
-- *AWS optimization:* Improved application performance and deployment efficiency while reducing infrastructure costs.
-- *Security and compliance:* Implemented custom AWS IAM policies that removed unauthorized-access vulnerabilities and supported a 100% security-audit compliance rate.
-- *Identity systems:* Delivered SSO for a Web3 mobile crypto wallet and implemented 2FA, OAuth 2.0, temporary codes, magic links, and SSO across other applications.
+- *End-to-end product ownership:* Lead products from initial idea and concept validation through requirements, planning, architecture, implementation, testing, production launch, monitoring, support, and continuous improvement.
+- *Full-stack product delivery:* Design and build customer-facing web applications, mobile applications, backend services, APIs, data models, automation systems, and internal platforms across the complete software development lifecycle.
+- *Web and mobile releases:* Prepare and release production web and mobile applications, manage versioning and app-store submissions, issue updates, support users, and operate products after launch.
+- *CI/CD and deployment engineering:* Build GitHub Actions pipelines and repeatable release workflows for cloud, containerized, serverless, static, web, and mobile targets across AWS, Cloudflare, Docker-based platforms, and application stores.
+- *Production reliability:* Improve deployment pipelines, operational readiness, and site reliability, helping maintain 99.9% uptime while reducing release time by 40%.
+- *Observability and incident response:* Implement monitoring, logging, dashboards, alerting, and production diagnostics with Prometheus, Grafana, and Kibana; investigate incidents and carry corrective work through deployment.
+- *Cloud architecture and operations:* Design, deploy, and maintain AWS infrastructure, improving application performance and release efficiency while controlling infrastructure costs.
+- *Security and identity:* Create least-privilege AWS IAM policies, remediate unauthorized-access risks, and support a 100% security-audit compliance rate; deliver OAuth 2.0, SSO, 2FA, magic links, temporary codes, and secure session workflows.
+- *Technical leadership:* Translate ambiguous business ideas into executable roadmaps, architecture decisions, delivery plans, and production systems while coordinating stakeholders across engineering, product, operations, and customers.
 #v(3pt)
+]
+#block(breakable: false)[
 #grid(columns: (1fr, auto), gutter: 8pt,
   [#text(weight: "bold", fill: navy)[USAA]],
   [#text(size: 8.4pt, style: "italic", fill: muted)[June 2020 - July 2022]],
@@ -108,13 +140,15 @@ A modular workspace operating system for projects, data, automation, content, an
   [#text(weight: "semibold")[Software Engineer III]],
   [#text(size: 8.4pt, fill: muted)[Remote]],
 )
-- *Quality engineering leadership:* Elected Vice President of the Quality Engineering Society and helped introduce comprehensive testing practices that supported consistent delivery of high-quality software.
-- *DevOps adoption:* Automated deployment pipelines, streamlined development workflows, and improved system monitoring to increase stability and reduce downtime.
-- *Proactive SRE:* Partnered with cross-functional teams to analyze performance, address vulnerabilities, and prevent failures.
-- *Monitoring and incident response:* Deployed real-time monitoring and alerting, led post-incident reviews, and drove long-term reliability improvements.
-- *Mentorship:* Guided junior engineers in SRE and quality practices.
-- *Scalable architecture:* Contributed to robust systems aligned with SRE practices and designed for growth under demand.
+- *Quality engineering leadership:* Served as Vice President of the Quality Engineering Society and advanced automated, integration, regression, and performance-testing practices across engineering teams.
+- *DevOps enablement:* Automated deployment pipelines and repeatable development workflows, improving release consistency, service stability, and recovery from change-related failures.
+- *Site reliability engineering:* Partnered across engineering, security, and operations to analyze performance, remediate vulnerabilities, reduce operational risk, and prevent recurring failures.
+- *Monitoring and incident response:* Implemented real-time monitoring and alerting, supported production incidents, led post-incident reviews, and converted findings into durable reliability improvements.
+- *Scalable systems:* Contributed to resilient application and service designs aligned with availability, capacity, performance, and maintainability requirements.
+- *Mentorship and standards:* Guided engineers in SRE, testing, troubleshooting, and quality practices while helping teams adopt stronger engineering standards.
 #v(3pt)
+]
+#block(breakable: false)[
 #grid(columns: (1fr, auto), gutter: 8pt,
   [#text(weight: "bold", fill: navy)[Web Plant Media]],
   [#text(size: 8.4pt, style: "italic", fill: muted)[July 2018 - May 2020]],
@@ -123,12 +157,14 @@ A modular workspace operating system for projects, data, automation, content, an
   [#text(weight: "semibold")[Software Engineer]],
   [#text(size: 8.4pt, fill: muted)[Remote]],
 )
-- *AWS migration:* Migrated client websites to AWS, improving load time, reliability, security, and long-term scalability while reducing hosting costs.
-- *Monitoring and logging:* Introduced real-time performance monitoring, alerting, and actionable logging for faster issue detection and data-informed improvements.
-- *Disaster recovery:* Developed and tested recovery plans to minimize downtime and protect client operations.
-- *Client delivery:* Maintained clear communication across projects and delivered tailored solutions for unique requirements.
-- *Performance and security:* Improved website speed, SEO, and data protection across client sites.
+- *Cloud migration:* Planned and executed client website migrations to AWS, improving performance, availability, security, scalability, and hosting efficiency.
+- *Observability:* Introduced application monitoring, alerting, and actionable logging to accelerate issue detection, troubleshooting, and performance analysis.
+- *Business continuity:* Developed and tested backup and disaster-recovery procedures that reduced operational risk and supported faster service restoration.
+- *Web performance:* Improved page speed, search visibility, accessibility, and data protection across a portfolio of client websites.
+- *Client delivery:* Translated business requirements into practical technical solutions, managed expectations, and supported client systems through launch and ongoing maintenance.
 #v(3pt)
+]
+#block(breakable: false)[
 #grid(columns: (1fr, auto), gutter: 8pt,
   [#text(weight: "bold", fill: navy)[Caprock Custom Apps]],
   [#text(size: 8.4pt, style: "italic", fill: muted)[February 2017 - July 2018]],
@@ -137,12 +173,15 @@ A modular workspace operating system for projects, data, automation, content, an
   [#text(weight: "semibold")[Software Engineer]],
   [#text(size: 8.4pt, fill: muted)[]],
 )
-- *Requirements and planning:* Worked with cross-functional teams to define requirements and prepare custom solution plans tied to business value.
-- *Backend performance:* Optimized Node.js and Express services, reducing response times by up to 30% for key features.
-- *Full development lifecycle:* Contributed from discovery through delivery for scalable applications that met client deadlines.
-- *Maintainability:* Applied scalable codebase practices that reduced technical debt and debugging time.
-- *Mobile delivery:* Released multiple mobile applications through app stores and provided post-launch technical support.
+- *Product discovery:* Worked directly with clients and cross-functional teams to define requirements, evaluate constraints, shape product scope, and prepare solution plans tied to business outcomes.
+- *Full-stack delivery:* Built custom web and mobile applications across front-end interfaces, Node.js and Express services, APIs, integrations, and data workflows.
+- *Backend performance:* Optimized service architecture and request handling, reducing response times by up to 30% for key application features.
+- *Software lifecycle:* Carried products from discovery and planning through development, testing, deployment, documentation, launch, and post-production support.
+- *Mobile releases:* Prepared and released multiple applications through mobile app stores, managed updates, and resolved post-launch technical issues.
+- *Maintainable architecture:* Introduced reusable patterns and scalable codebase practices that reduced technical debt and shortened debugging time.
 #v(3pt)
+]
+#block(breakable: false)[
 #grid(columns: (1fr, auto), gutter: 8pt,
   [#text(weight: "bold", fill: navy)[IT Help Central]],
   [#text(size: 8.4pt, style: "italic", fill: muted)[November 2015 - August 2017]],
@@ -151,12 +190,13 @@ A modular workspace operating system for projects, data, automation, content, an
   [#text(weight: "semibold")[IT Support Technician / Supervisor]],
   [#text(size: 8.4pt, fill: muted)[]],
 )
-- *Technical support:* Resolved software and hardware issues for students, faculty, and staff through walk-up, phone, and on-site channels.
-- *Knowledge management:* Created and maintained troubleshooting content used by thousands of Texas Tech University users.
-- *Team leadership:* Earned promotion to Lead Technician, assumed additional operational responsibilities, and led projects.
-- *Customer communication:* Translated technical information for people with varied levels of expertise.
-- *Problem solving:* Diagnosed root causes and collaborated with other IT staff to resolve complex issues efficiently.
+- *Technical support:* Diagnosed and resolved software, hardware, account, network, and endpoint issues for students, faculty, and staff through walk-up, phone, and on-site support.
+- *Knowledge management:* Created and maintained searchable troubleshooting documentation used by thousands of Texas Tech University users and support technicians.
+- *Team leadership:* Earned promotion to Lead Technician, coordinated day-to-day support work, assumed additional operational responsibilities, and led technical projects.
+- *Incident ownership:* Triaged requests, investigated root causes, escalated effectively, and collaborated with specialized IT teams through resolution.
+- *Customer communication:* Explained technical issues and solutions clearly to people with varied experience while maintaining a service-focused support experience.
 #v(3pt)
+]
 #section("Leadership")
 #grid(columns: (1fr, auto), gutter: 8pt,
   [#text(weight: "bold", fill: navy)[Vice President, Quality Engineering Society, USAA]],

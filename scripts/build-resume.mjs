@@ -155,10 +155,11 @@ if (projects.length) {
   }
 }
 
-lines.push('#pagebreak()', '#section("Professional Experience")');
+lines.push('#section("Professional Experience")');
 
 for (const job of experience) {
   lines.push(
+    '#block(breakable: false)[',
     '#grid(columns: (1fr, auto), gutter: 8pt,',
     '  [#text(weight: "bold", fill: navy)[' + typstText(job.metadata.company) + ']],',
     '  [#text(size: 8.4pt, style: "italic", fill: muted)[' + typstText(job.metadata.startDate) + ' - ' + typstText(job.metadata.endDate) + ']],',
@@ -169,6 +170,7 @@ for (const job of experience) {
     ')',
     ...bulletItems(job.content),
     '#v(3pt)',
+    ']',
   );
 }
 

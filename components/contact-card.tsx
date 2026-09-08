@@ -7,25 +7,12 @@ export default function ContactCard() {
   const name = String(profile.metadata.name);
   const role = String(profile.metadata.role);
   const tagline = String(profile.metadata.tagline);
-  const initials = name
-    .split(" ")
-    .map((part) => part[0])
-    .join("")
-    .slice(0, 2);
 
   return (
     <aside className="w-full shrink-0 px-4 pt-4 lg:w-72 lg:px-5 lg:py-6 xl:w-80" aria-label="Contact and site navigation">
       <div className="border-slate-200/80 bg-white/95 shadow-slate-200/60 sticky top-4 overflow-hidden rounded-2xl border shadow-xl shadow-slate-200/50 backdrop-blur lg:top-6 dark:border-slate-800 dark:bg-slate-900/95 dark:shadow-none">
-        <div className="relative overflow-hidden border-b border-slate-200 bg-linear-to-br from-sky-50 via-white to-slate-50 p-5 dark:border-slate-800 dark:from-sky-500/10 dark:via-slate-900 dark:to-slate-900">
-          <div className="absolute -top-12 -right-12 h-32 w-32 rounded-full bg-sky-200/40 blur-2xl dark:bg-sky-500/10" aria-hidden="true" />
-          <Link
-            className="relative mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-500 font-aspekta text-sm font-[650] tracking-wider text-white shadow-lg shadow-sky-500/25 transition-transform hover:-translate-y-0.5"
-            href="/"
-            aria-label={`${name} home`}
-          >
-            {initials}
-          </Link>
-          <div className="relative">
+        <div className="border-b border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+          <div>
             <h2 className="font-aspekta text-xl font-[650] text-slate-900 dark:text-white">{name}</h2>
             <p className="mt-1 text-sm font-medium text-sky-600 dark:text-sky-400">{role}</p>
             <p className="mt-3 text-sm leading-relaxed text-slate-500 dark:text-slate-400">{tagline}</p>
