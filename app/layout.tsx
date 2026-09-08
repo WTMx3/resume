@@ -3,10 +3,10 @@ import "./css/style.css";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 
+import ContactCard from "@/components/contact-card";
 import { getContentCollection } from "@/components/mdx/utils";
 import Footer from "@/components/ui/footer";
 import Header from "@/components/ui/header";
-import SideNavigation from "@/components/ui/side-navigation";
 
 import Theme from "./theme-provider";
 
@@ -100,11 +100,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <Theme>
           <div className="mx-auto max-w-7xl">
-            <div className="flex min-h-screen">
-              <SideNavigation />
+            <div className="flex min-h-screen flex-col lg:flex-row">
+              <ContactCard />
 
               {/* Main content */}
-              <main className="grow overflow-hidden px-6">
+              <main className="min-w-0 grow overflow-hidden px-6">
                 <div className="mx-auto flex h-full w-full max-w-[1072px] flex-col">
                   <Header />
 
