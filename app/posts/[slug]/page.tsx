@@ -5,9 +5,6 @@ import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx/mdx";
 import { getBlogPosts } from "@/components/mdx/utils";
 import PostDate from "@/components/post-date";
-import WidgetNewsletter from "@/components/widget-newsletter";
-import WidgetPosts from "@/components/widget-posts";
-import WidgetSponsor from "@/components/widget-sponsor";
 
 export async function generateStaticParams() {
   const allBlogs = getBlogPosts();
@@ -38,10 +35,8 @@ export default async function SinglePost(props: { params: Promise<{ slug: string
   if (!post) notFound();
 
   return (
-    <div className="grow space-y-8 pt-12 pb-16 md:flex md:space-y-0 md:space-x-8 md:pt-16 md:pb-20">
-      {/* Middle area */}
-      <div className="grow">
-        <div className="max-w-[700px]">
+    <div className="grow pt-12 pb-16 md:pt-16 md:pb-20">
+      <div className="max-w-[760px]">
           {/* Back */}
           <div className="mb-3">
             <Link
@@ -111,17 +106,7 @@ export default async function SinglePost(props: { params: Promise<{ slug: string
               <CustomMDX source={post.content} />
             </div>
           </article>
-        </div>
       </div>
-
-      {/* Right sidebar */}
-      <aside className="shrink-0 md:w-[240px] lg:w-[300px]">
-        <div className="space-y-6">
-          <WidgetNewsletter />
-          <WidgetSponsor />
-          <WidgetPosts />
-        </div>
-      </aside>
     </div>
   );
 }

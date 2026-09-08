@@ -1,4 +1,9 @@
+import { CustomMDX } from "@/components/mdx/mdx";
+import { getContentCollection } from "@/components/mdx/utils";
+
 export default function Hero() {
+  const profile = getContentCollection("profile")[0];
+
   return (
     <section>
       <div className="max-w-[700px]">
@@ -15,10 +20,22 @@ export default function Hero() {
               systems behind them.
             </span>
           </h1>
-          <p className="text-lg text-slate-500 dark:text-slate-400">
-            I&apos;m Thomas Miller, a senior software engineer specializing in platform engineering, DevOps, site
-            reliability, cloud infrastructure, and secure full-stack systems.
-          </p>
+          <div className="prose prose-lg prose-p:leading-relaxed max-w-none text-slate-500 dark:text-slate-400">
+            <CustomMDX source={profile.content} />
+          </div>
+          <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
+            <a className="text-sky-500 hover:underline" href={`mailto:${String(profile.metadata.email)}`}>
+              {String(profile.metadata.email)}
+            </a>
+            <a
+              className="text-slate-500 hover:text-sky-500 dark:text-slate-400"
+              href={String(profile.metadata.website)}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {String(profile.metadata.websiteLabel)}
+            </a>
+          </div>
         </div>
       </div>
     </section>

@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "resume:source": "node scripts/build-resume.mjs",
+    "resume:pdf": "pnpm resume:source && typst compile resume/thomas-miller-master.typ output/pdf/thomas-miller-master-resume.pdf --pdf-standard ua-1",
     "start": "next start",
     "lint": "eslint . --fix",
     "format": "prettier --write ."

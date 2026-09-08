@@ -3,6 +3,7 @@ import "./css/style.css";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 
+import { getContentCollection } from "@/components/mdx/utils";
 import Footer from "@/components/ui/footer";
 import Header from "@/components/ui/header";
 import SideNavigation from "@/components/ui/side-navigation";
@@ -30,15 +31,16 @@ const aspekta = localFont({
   display: "swap",
 });
 
+const profile = getContentCollection("profile")[0];
+
 export const metadata = {
   title: {
-    default: "Thomas Miller | Senior Software Engineer",
-    template: "%s | Thomas Miller",
+    default: `${String(profile.metadata.name)} | ${String(profile.metadata.role)}`,
+    template: `%s | ${String(profile.metadata.name)}`,
   },
-  description:
-    "Senior software engineer focused on platform engineering, DevOps, site reliability, cloud infrastructure, and secure full-stack systems.",
-  authors: [{ name: "Thomas Miller", url: "https://www.millers.wiki" }],
-  creator: "Thomas Miller",
+  description: profile.content,
+  authors: [{ name: String(profile.metadata.name), url: String(profile.metadata.website) }],
+  creator: String(profile.metadata.name),
   keywords: [
     "Senior Software Engineer",
     "Platform Engineering",
@@ -64,11 +66,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const personStructuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Thomas Miller",
-    url: "https://www.millers.wiki",
-    email: "mailto:wthomasmiii@gmail.com",
-    telephone: "+1-972-795-9884",
-    jobTitle: "Senior Software Engineer",
+    name: String(profile.metadata.name),
+    url: String(profile.metadata.website),
+    email: `mailto:${String(profile.metadata.email)}`,
+    telephone: String(profile.metadata.phoneHref),
+    jobTitle: String(profile.metadata.role),
     worksFor: { "@type": "Organization", name: "BAAS Software" },
     knowsAbout: [
       "Platform Engineering",

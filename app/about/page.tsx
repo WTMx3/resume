@@ -1,8 +1,6 @@
 import Link from "next/link";
 
-import ContactCard from "@/components/contact-card";
 import Experience from "@/components/experience";
-import WidgetSkills from "@/components/widget-skills";
 
 export const metadata = {
   title: "About",
@@ -11,9 +9,8 @@ export const metadata = {
 
 export default function About() {
   return (
-    <div className="grow space-y-8 pt-12 pb-16 md:flex md:space-y-0 md:space-x-8 md:pt-16 md:pb-20">
-      <div className="grow">
-        <div className="max-w-[700px] space-y-12">
+    <div className="grow pt-12 pb-16 md:pt-16 md:pb-20">
+      <div className="max-w-[820px] space-y-12">
           <section>
             <p className="mb-2 text-sm font-medium text-sky-500">About</p>
             <h1 className="h1 font-aspekta mb-5">I turn complex systems into dependable products.</h1>
@@ -33,14 +30,7 @@ export default function About() {
             </div>
           </section>
           <Experience limit={3} showDetails={false} />
-        </div>
       </div>
-      <aside className="shrink-0 md:w-[240px] lg:w-[300px]">
-        <div className="space-y-6">
-          <ContactCard />
-          <WidgetSkills />
-        </div>
-      </aside>
     </div>
   );
 }

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import ContactCard from "@/components/contact-card";
 import { CustomMDX } from "@/components/mdx/mdx";
 import { getContentCollection, getContentEntry } from "@/components/mdx/utils";
 
@@ -29,9 +28,9 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
   const technologies = project.metadata.technologies as string[];
 
   return (
-    <div className="grow space-y-8 pt-12 pb-16 md:flex md:space-y-0 md:space-x-8 md:pt-16 md:pb-20">
-      <div className="grow">
-        <article className="max-w-[700px]">
+    <div className="grow pt-12 pb-16 md:pt-16 md:pb-20">
+      <div>
+        <article className="max-w-[820px]">
           <Link className="mb-5 inline-flex text-sm font-medium text-sky-500 hover:underline" href="/projects">
             ← Back to portfolio
           </Link>
@@ -61,9 +60,6 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
           </a>
         </article>
       </div>
-      <aside className="shrink-0 md:w-[240px] lg:w-[300px]">
-        <ContactCard />
-      </aside>
     </div>
   );
 }

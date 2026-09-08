@@ -1,6 +1,4 @@
-import ContactCard from "@/components/contact-card";
 import { getContentCollection } from "@/components/mdx/utils";
-import WidgetSkills from "@/components/widget-skills";
 
 import ProjectCard from "../project-card";
 
@@ -13,9 +11,8 @@ export default function Projects() {
   const projects = getContentCollection("projects");
 
   return (
-    <div className="grow space-y-8 pt-12 pb-16 md:flex md:space-y-0 md:space-x-8 md:pt-16 md:pb-20">
-      <div className="grow">
-        <div className="max-w-[700px]">
+    <div className="grow pt-12 pb-16 md:pt-16 md:pb-20">
+      <div className="max-w-[920px]">
           <section aria-labelledby="portfolio-heading">
             <p className="mb-2 text-sm font-medium text-sky-500">Selected work</p>
             <h1 id="portfolio-heading" className="h1 font-aspekta mb-5">
@@ -40,14 +37,7 @@ export default function Projects() {
               ))}
             </div>
           </section>
-        </div>
       </div>
-      <aside className="shrink-0 md:w-[240px] lg:w-[300px]">
-        <div className="space-y-6">
-          <WidgetSkills />
-          <ContactCard />
-        </div>
-      </aside>
     </div>
   );
 }

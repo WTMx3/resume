@@ -1,5 +1,5 @@
-import { getContentCollection } from "@/components/mdx/utils";
 import ProjectCard from "@/app/project-card";
+import { getContentCollection } from "@/components/mdx/utils";
 
 export default function FeaturedProjects() {
   const projects = getContentCollection("projects").filter((project) => project.metadata.featured === true);
