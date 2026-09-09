@@ -5,7 +5,7 @@
 )
 #set page(
   paper: "us-letter",
-  margin: (top: 0.56in, bottom: 0.52in, left: 0.68in, right: 0.68in),
+  margin: (top: 0.58in, bottom: 0.58in, left: 0.7in, right: 0.7in),
   numbering: "1",
   number-align: right,
 )
@@ -14,25 +14,25 @@
 #let muted = rgb("#6b778c")
 #let rule = rgb("#dbe3ec")
 #let accent = rgb("#0b72b9")
-#set text(font: ("Segoe UI", "Arial"), size: 9pt, fill: body)
-#set par(leading: 0.6em)
-#set list(indent: 10pt, body-indent: 5pt, spacing: 2.8pt)
+#set text(font: ("Segoe UI", "Arial"), size: 9.8pt, fill: body)
+#set par(leading: 0.7em)
+#set list(indent: 11pt, body-indent: 5.5pt, spacing: 4pt)
 #show link: set text(fill: accent)
 #let section(title) = {
-  v(9pt)
+  v(11pt)
   grid(columns: (auto, 1fr), gutter: 9pt, align: horizon,
-    text(size: 10.4pt, weight: "bold", fill: ink, tracking: 0.4pt, upper(title)),
+    text(size: 11.2pt, weight: "bold", fill: ink, tracking: 0.45pt, upper(title)),
     line(length: 100%, stroke: 0.55pt + rule),
   )
-  v(5pt)
+  v(6.5pt)
 }
 #grid(columns: (1fr, auto), gutter: 20pt, align: top,
-  [#text(size: 24pt, weight: "bold", fill: ink)[Thomas Miller]
-   #v(2pt)
-   #text(size: 10.5pt, weight: "semibold", fill: accent)[Senior Software Engineer]
-   #v(2pt)
-   #text(size: 8.4pt, fill: muted)[Platform Engineering  |  DevOps  |  Site Reliability  |  Secure Systems]],
-  [#align(right)[#text(size: 8.3pt)[
+  [#text(size: 25.5pt, weight: "bold", fill: ink)[Thomas Miller]
+   #v(2.5pt)
+   #text(size: 11.2pt, weight: "semibold", fill: accent)[Senior Software Engineer]
+   #v(2.5pt)
+   #text(size: 9pt, fill: muted)[Platform Engineering  |  DevOps  |  Site Reliability  |  Secure Systems]],
+  [#align(right)[#text(size: 9pt)[
     #link("mailto:wthomasmiii\@gmail.com")[wthomasmiii\@gmail.com] \
     #link("tel:+19727959884")[(972) 795-9884] \
     #link("https://thomasmiller.cv")[thomasmiller.cv]
@@ -40,7 +40,7 @@
 )
 #v(7pt)
 #line(length: 100%, stroke: 1.1pt + accent)
-#section("Professional Summary")
+#section("Summary")
 Platform-focused engineer with more than 10 years of experience building full-stack products and the systems that keep them reliable: cloud infrastructure, CI/CD, observability, identity and access management, scalable architecture, incident response, and technical leadership.
 #section("Skills")
 #grid(columns: (112pt, 1fr), column-gutter: 10pt, row-gutter: 3.2pt,
@@ -71,14 +71,32 @@ Platform-focused engineer with more than 10 years of experience building full-st
   [#text(weight: "semibold", fill: ink)[Project Management]],
   [Agile, Scrum, Cross-Functional Collaboration, Mentoring],
 )
-#section("Professional Experience")
-#block(above: 2pt, below: 6pt, breakable: false)[
-#grid(columns: (1fr, auto), gutter: 8pt,
-  [#text(size: 10.2pt, weight: "bold", fill: ink)[Senior Software Engineer]],
-  [#text(size: 8.4pt, fill: muted)[June 2022 - Present]],
+#section("Education")
+#grid(columns: (1fr, auto), gutter: 10pt,
+  [#text(size: 11pt, weight: "bold", fill: ink)[Bachelor of Business Administration (BBA)]],
+  [#text(size: 9.2pt, fill: muted)[Fall 2015 - Spring 2020]],
 )
-#text(size: 8.7pt, weight: "semibold", fill: accent)[BAAS Software | Remote]
-#v(2pt)
+#text(size: 9.4pt, weight: "semibold", fill: accent)[Texas Tech University]
+#h(7pt)#text(size: 9.2pt, fill: muted)[Information Technology - Emphasis in Application Development]
+#v(3pt)
+Completed a business and technology curriculum focused on application development, information systems, and practical software delivery.
+#section("Accolades")
+#grid(columns: (1fr, auto), gutter: 10pt,
+  [#text(size: 11pt, weight: "bold", fill: ink)[Vice President]],
+  [#text(size: 9.2pt, fill: muted)[November 2020 - July 2022]],
+)
+#text(size: 9.4pt, weight: "semibold", fill: accent)[Quality Engineering Society, USAA]
+#v(3pt)
+Elected to help advance quality engineering practices, testing frameworks, mentorship, and operational excellence.
+#pagebreak()
+#section("Employment History")
+#block(above: 3pt, below: 9pt, breakable: false)[
+#grid(columns: (1fr, auto), gutter: 8pt,
+  [#text(size: 11pt, weight: "bold", fill: ink)[Senior Software Engineer]],
+  [#text(size: 9.2pt, fill: muted)[June 2022 - Present]],
+)
+#text(size: 9.4pt, weight: "semibold", fill: accent)[BAAS Software | Remote]
+#v(3pt)
 - Lead products from initial idea and concept validation through requirements, planning, architecture, implementation, testing, production launch, monitoring, support, and continuous improvement.
 - Design and build customer-facing web applications, mobile applications, backend services, APIs, data models, automation systems, and internal platforms across the complete software development lifecycle.
 - Prepare and release production web and mobile applications, manage versioning and app-store submissions, issue updates, support users, and operate products after launch.
@@ -89,13 +107,13 @@ Platform-focused engineer with more than 10 years of experience building full-st
 - Create least-privilege AWS IAM policies, remediate unauthorized-access risks, and support a 100% security-audit compliance rate; deliver OAuth 2.0, SSO, 2FA, magic links, temporary codes, and secure session workflows.
 - Translate ambiguous business ideas into executable roadmaps, architecture decisions, delivery plans, and production systems while coordinating stakeholders across engineering, product, operations, and customers.
 ]
-#block(above: 2pt, below: 6pt, breakable: false)[
+#block(above: 3pt, below: 9pt, breakable: false)[
 #grid(columns: (1fr, auto), gutter: 8pt,
-  [#text(size: 10.2pt, weight: "bold", fill: ink)[Software Engineer III]],
-  [#text(size: 8.4pt, fill: muted)[June 2020 - July 2022]],
+  [#text(size: 11pt, weight: "bold", fill: ink)[Software Engineer III]],
+  [#text(size: 9.2pt, fill: muted)[June 2020 - July 2022]],
 )
-#text(size: 8.7pt, weight: "semibold", fill: accent)[USAA | Remote]
-#v(2pt)
+#text(size: 9.4pt, weight: "semibold", fill: accent)[USAA | Remote]
+#v(3pt)
 - Served as Vice President of the Quality Engineering Society and advanced automated, integration, regression, and performance-testing practices across engineering teams.
 - Automated deployment pipelines and repeatable development workflows, improving release consistency, service stability, and recovery from change-related failures.
 - Partnered across engineering, security, and operations to analyze performance, remediate vulnerabilities, reduce operational risk, and prevent recurring failures.
@@ -103,13 +121,13 @@ Platform-focused engineer with more than 10 years of experience building full-st
 - Contributed to resilient application and service designs aligned with availability, capacity, performance, and maintainability requirements.
 - Guided engineers in SRE, testing, troubleshooting, and quality practices while helping teams adopt stronger engineering standards.
 ]
-#block(above: 2pt, below: 6pt, breakable: false)[
+#block(above: 3pt, below: 9pt, breakable: false)[
 #grid(columns: (1fr, auto), gutter: 8pt,
-  [#text(size: 10.2pt, weight: "bold", fill: ink)[Software Engineer]],
-  [#text(size: 8.4pt, fill: muted)[July 2018 - May 2020]],
+  [#text(size: 11pt, weight: "bold", fill: ink)[Software Engineer]],
+  [#text(size: 9.2pt, fill: muted)[July 2018 - May 2020]],
 )
-#text(size: 8.7pt, weight: "semibold", fill: accent)[Web Plant Media | Remote]
-#v(2pt)
+#text(size: 9.4pt, weight: "semibold", fill: accent)[Web Plant Media | Remote]
+#v(3pt)
 - Developed reusable React component libraries for WordPress themes, giving teams a consistent foundation for navigation, content modules, forms, media, and interactive page experiences.
 - Designed and built independent WordPress themes with custom templates, responsive layouts, configurable content patterns, and maintainable front-end architecture.
 - Led UI/UX work from information architecture and user flows through wireframes, visual design, responsive implementation, and iterative refinement with clients and stakeholders.
@@ -120,13 +138,13 @@ Platform-focused engineer with more than 10 years of experience building full-st
 - Improved page speed, search visibility, accessibility, and data protection across a portfolio of client websites.
 - Translated business requirements into practical technical solutions, managed expectations, and supported client systems through launch and ongoing maintenance.
 ]
-#block(above: 2pt, below: 6pt, breakable: false)[
+#block(above: 3pt, below: 9pt, breakable: false)[
 #grid(columns: (1fr, auto), gutter: 8pt,
-  [#text(size: 10.2pt, weight: "bold", fill: ink)[Software Engineer]],
-  [#text(size: 8.4pt, fill: muted)[February 2017 - July 2018]],
+  [#text(size: 11pt, weight: "bold", fill: ink)[Software Engineer]],
+  [#text(size: 9.2pt, fill: muted)[February 2017 - July 2018]],
 )
-#text(size: 8.7pt, weight: "semibold", fill: accent)[Caprock Custom Apps]
-#v(2pt)
+#text(size: 9.4pt, weight: "semibold", fill: accent)[Caprock Custom Apps]
+#v(3pt)
 - Worked directly with clients and cross-functional teams to define requirements, evaluate constraints, shape product scope, and prepare solution plans tied to business outcomes.
 - Built custom web and mobile applications across front-end interfaces, Node.js and Express services, APIs, integrations, and data workflows.
 - Optimized service architecture and request handling, reducing response times by up to 30% for key application features.
@@ -134,31 +152,31 @@ Platform-focused engineer with more than 10 years of experience building full-st
 - Prepared and released multiple applications through mobile app stores, managed updates, and resolved post-launch technical issues.
 - Introduced reusable patterns and scalable codebase practices that reduced technical debt and shortened debugging time.
 ]
-#block(above: 2pt, below: 6pt, breakable: false)[
+#block(above: 3pt, below: 9pt, breakable: false)[
 #grid(columns: (1fr, auto), gutter: 8pt,
-  [#text(size: 10.2pt, weight: "bold", fill: ink)[IT Support Technician / Supervisor]],
-  [#text(size: 8.4pt, fill: muted)[November 2015 - August 2017]],
+  [#text(size: 11pt, weight: "bold", fill: ink)[IT Support Technician / Supervisor]],
+  [#text(size: 9.2pt, fill: muted)[November 2015 - August 2017]],
 )
-#text(size: 8.7pt, weight: "semibold", fill: accent)[IT Help Central]
-#v(2pt)
+#text(size: 9.4pt, weight: "semibold", fill: accent)[IT Help Central]
+#v(3pt)
 - Diagnosed and resolved software, hardware, account, network, and endpoint issues for students, faculty, and staff through walk-up, phone, and on-site support.
 - Created and maintained searchable troubleshooting documentation used by thousands of Texas Tech University users and support technicians.
 - Earned promotion to Lead Technician, coordinated day-to-day support work, assumed additional operational responsibilities, and led technical projects.
 - Triaged requests, investigated root causes, escalated effectively, and collaborated with specialized IT teams through resolution.
 - Explained technical issues and solutions clearly to people with varied experience while maintaining a service-focused support experience.
 ]
-#pagebreak(weak: true)
+#pagebreak()
 #section("Selected Portfolio")
-#block(above: 2pt, below: 7pt, breakable: false)[
+#block(above: 3pt, below: 10pt, breakable: false)[
 #grid(columns: (1fr, auto), gutter: 8pt,
-  [#text(size: 10.2pt, weight: "bold", fill: ink)[EazyHQ]],
-  [#text(size: 8.4pt, fill: muted)[Active development]],
+  [#text(size: 11pt, weight: "bold", fill: ink)[EazyHQ]],
+  [#text(size: 9.2pt, fill: muted)[Active development]],
 )
-#text(size: 8.7pt, weight: "semibold", fill: accent)[Lead Software Engineer | June 2026]
-#v(2pt)
+#text(size: 9.4pt, weight: "semibold", fill: accent)[Lead Software Engineer | June 2026]
+#v(3pt)
 A modular workspace operating system for projects, data, automation, content, and team workflows.
-#v(1pt)
-#text(size: 8.2pt, fill: muted)[Tech: Flutter, Dart, Go, PostgreSQL, Redis, Docker, GitHub Actions, Caddy]
+#v(2pt)
+#text(size: 9pt, fill: muted)[Tech: Flutter, Dart, Go, PostgreSQL, Redis, Docker, GitHub Actions, Caddy]
 - Designed a registry-first add-on architecture with build-time linking and workspace-level enablement.
 - Built event-driven automation infrastructure covering subscriptions, queued steps, waits, execution logs, and run histories.
 - Developed workspace dashboards with configurable tabs, permission-aware editing, and add-on-provided widgets.
@@ -166,32 +184,32 @@ A modular workspace operating system for projects, data, automation, content, an
 - Created a cross-platform Flutter interface backed by a Go service layer, PostgreSQL, Redis, and containerized deployment.
 - Established GitHub Actions and Docker-based delivery workflows for the API and web application.
 ]
-#block(above: 2pt, below: 7pt, breakable: false)[
+#block(above: 3pt, below: 10pt, breakable: false)[
 #grid(columns: (1fr, auto), gutter: 8pt,
-  [#text(size: 10.2pt, weight: "bold", fill: ink)[Listings+]],
-  [#text(size: 8.4pt, fill: muted)[Portfolio snapshot]],
+  [#text(size: 11pt, weight: "bold", fill: ink)[Listings+]],
+  [#text(size: 9.2pt, fill: muted)[Portfolio snapshot]],
 )
-#text(size: 8.7pt, weight: "semibold", fill: accent)[Full-Stack Software Engineer | 2025]
-#v(2pt)
+#text(size: 9.4pt, weight: "semibold", fill: accent)[Full-Stack Software Engineer | 2025]
+#v(3pt)
 An AI-assisted real-estate discovery experience that turns natural-language preferences into focused property results.
-#v(1pt)
-#text(size: 8.2pt, fill: muted)[Tech: Next.js, React, TypeScript, Tailwind CSS, Cloudflare, Radix UI]
+#v(2pt)
+#text(size: 9pt, fill: muted)[Tech: Next.js, React, TypeScript, Tailwind CSS, Cloudflare, Radix UI]
 - Created a natural-language property search flow with city autocomplete and structured preference capture.
 - Developed responsive listing cards, comparison tables, image carousels, and property-detail experiences.
 - Built server-action boundaries for search and lead-submission integrations.
 - Composed accessible, reusable interface primitives with Radix UI, Tailwind CSS, and motion libraries.
 - Prepared the Next.js application for Cloudflare deployment with OpenNext.
 ]
-#block(above: 2pt, below: 7pt, breakable: false)[
+#block(above: 3pt, below: 10pt, breakable: false)[
 #grid(columns: (1fr, auto), gutter: 8pt,
-  [#text(size: 10.2pt, weight: "bold", fill: ink)[PDF Generator Service]],
-  [#text(size: 8.4pt, fill: muted)[Portfolio snapshot]],
+  [#text(size: 11pt, weight: "bold", fill: ink)[PDF Generator Service]],
+  [#text(size: 9.2pt, fill: muted)[Portfolio snapshot]],
 )
-#text(size: 8.7pt, weight: "semibold", fill: accent)[Backend Software Engineer | 2024]
-#v(2pt)
+#text(size: 9.4pt, weight: "semibold", fill: accent)[Backend Software Engineer | 2024]
+#v(3pt)
 A TypeScript service that renders structured content into polished PDFs and publishes them to S3-compatible storage.
-#v(1pt)
-#text(size: 8.2pt, fill: muted)[Tech: TypeScript, Express, Puppeteer, AWS SDK, Docker]
+#v(2pt)
+#text(size: 9pt, fill: muted)[Tech: TypeScript, Express, Puppeteer, AWS SDK, Docker]
 - Designed a small Express API for document-generation requests.
 - Implemented reusable cover and content-page layouts for structured project data.
 - Integrated Puppeteer and Chromium for predictable server-side PDF rendering.
@@ -199,20 +217,3 @@ A TypeScript service that renders structured content into polished PDFs and publ
 - Containerized the service for repeatable builds and deployment.
 - Added temporary-file cleanup and environment-driven configuration.
 ]
-#section("Education")
-#grid(columns: (1fr, auto), gutter: 8pt,
-  [#text(size: 10.2pt, weight: "bold", fill: ink)[Bachelor of Business Administration (BBA)]],
-  [#text(size: 8.4pt, fill: muted)[Fall 2015 - Spring 2020]],
-)
-#text(size: 8.7pt, weight: "semibold", fill: accent)[Texas Tech University]
-#h(6pt)#text(size: 8.5pt, fill: muted)[Information Technology - Emphasis in Application Development]
-#v(2pt)
-Completed a business and technology curriculum focused on application development, information systems, and practical software delivery.
-#section("Leadership")
-#grid(columns: (1fr, auto), gutter: 8pt,
-  [#text(size: 10.2pt, weight: "bold", fill: ink)[Vice President]],
-  [#text(size: 8.4pt, fill: muted)[November 2020 - July 2022]],
-)
-#text(size: 8.7pt, weight: "semibold", fill: accent)[Quality Engineering Society, USAA]
-#v(2pt)
-Elected to help advance quality engineering practices, testing frameworks, mentorship, and operational excellence.
