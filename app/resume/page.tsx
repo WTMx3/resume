@@ -34,7 +34,7 @@ export default function Resume() {
               </a>
             </address>
           </header>
-          <div className="space-y-12 text-slate-500 dark:text-slate-400">
+          <div className="text-slate-500 dark:text-slate-400">
             <Experience />
             <Education />
             <ProfessionalSkills />

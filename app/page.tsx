@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <div className="grow max-w-[920px] space-y-14 pb-16 md:pb-20">
+      <div className="grow max-w-[980px] pb-16 md:pb-20">
         <ProfessionalSkills />
         <Experience />
         <Leadership />

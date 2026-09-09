@@ -69,12 +69,7 @@ function bulletItems(markdown) {
   return markdown
     .split(/\r?\n/)
     .filter((line) => line.trimStart().startsWith('- '))
-    .map((line) => {
-      const value = line.trim().slice(2);
-      const labeled = /^\*\*(.+?)\*\*\s*(.*)$/.exec(value);
-      if (!labeled) return '- ' + typstText(value);
-      return '- *' + typstText(labeled[1]) + '* ' + typstText(labeled[2]);
-    });
+    .map((line) => '- ' + typstText(line.trim().slice(2).replace(/^\*\*.+?:\*\*\s*/, '')));
 }
 
 const profile = collection('profile')[0];
@@ -94,84 +89,90 @@ const lines = [
   ')',
   '#set page(',
   '  paper: "us-letter",',
-  '  margin: (top: 0.42in, bottom: 0.42in, left: 0.58in, right: 0.58in),',
+  '  margin: (top: 0.56in, bottom: 0.52in, left: 0.68in, right: 0.68in),',
   '  numbering: "1",',
-  '  number-align: center,',
+  '  number-align: right,',
   ')',
-  '#let navy = rgb("#152238")',
-  '#let ink = rgb("#334155")',
-  '#let muted = rgb("#64748b")',
-  '#let accent = rgb("#0284c7")',
-  '#set text(font: ("Segoe UI", "Arial"), size: 8.75pt, fill: ink)',
-  '#set par(leading: 0.62em)',
-  '#set list(indent: 10pt, body-indent: 5pt, spacing: 3pt)',
+  '#let ink = rgb("#172033")',
+  '#let body = rgb("#3f4b5f")',
+  '#let muted = rgb("#6b778c")',
+  '#let rule = rgb("#dbe3ec")',
+  '#let accent = rgb("#0b72b9")',
+  '#set text(font: ("Segoe UI", "Arial"), size: 9pt, fill: body)',
+  '#set par(leading: 0.6em)',
+  '#set list(indent: 10pt, body-indent: 5pt, spacing: 2.8pt)',
   '#show link: set text(fill: accent)',
   '#let section(title) = {',
-  '  v(6pt)',
-  '  text(size: 10.8pt, weight: "bold", fill: navy, upper(title))',
-  '  v(1pt)',
-  '  line(length: 100%, stroke: 0.8pt + accent)',
-  '  v(3pt)',
+  '  v(9pt)',
+  '  grid(columns: (auto, 1fr), gutter: 9pt, align: horizon,',
+  '    text(size: 10.4pt, weight: "bold", fill: ink, tracking: 0.4pt, upper(title)),',
+  '    line(length: 100%, stroke: 0.55pt + rule),',
+  '  )',
+  '  v(5pt)',
   '}',
-  '#align(center)[',
-  '  #text(size: 22pt, weight: "bold", fill: navy)[' + typstText(profile.metadata.name) + ']',
-  '  #v(1pt)',
-  '  #text(size: 10pt, weight: "semibold", fill: accent)[' + typstText(profile.metadata.role) + ']',
-  '  #v(1pt)',
-  '  #text(size: 8.2pt, fill: muted)[' + typstText(profile.metadata.tagline) + ']',
-  '  #v(3pt)',
-  '  #text(size: 8.2pt)[',
-  '    #link("mailto:' + typstText(profile.metadata.email) + '")[' + typstText(profile.metadata.email) + ']',
-  '    #h(10pt) | #h(10pt)',
-  '    #link("tel:' + typstText(profile.metadata.phoneHref) + '")[' + typstText(profile.metadata.phone) + ']',
-  '    #h(10pt) | #h(10pt)',
+  '#grid(columns: (1fr, auto), gutter: 20pt, align: top,',
+  '  [#text(size: 24pt, weight: "bold", fill: ink)[' + typstText(profile.metadata.name) + ']',
+  '   #v(2pt)',
+  '   #text(size: 10.5pt, weight: "semibold", fill: accent)[' + typstText(profile.metadata.role) + ']',
+  '   #v(2pt)',
+  '   #text(size: 8.4pt, fill: muted)[' + typstText(profile.metadata.tagline) + ']],',
+  '  [#align(right)[#text(size: 8.3pt)[',
+  '    #link("mailto:' + typstText(profile.metadata.email) + '")[' + typstText(profile.metadata.email) + '] \\',
+  '    #link("tel:' + typstText(profile.metadata.phoneHref) + '")[' + typstText(profile.metadata.phone) + '] \\',
   '    #link("' + typstText(profile.metadata.website) + '")[' + typstText(profile.metadata.websiteLabel) + ']',
-  '  ]',
-  ']',
+  '  ]]],',
+  ')',
+  '#v(7pt)',
+  '#line(length: 100%, stroke: 1.1pt + accent)',
   '#section("Professional Summary")',
   typstText(profile.content),
-  '#section("Core Expertise")',
+  '#section("Skills")',
+  '#grid(columns: (112pt, 1fr), column-gutter: 10pt, row-gutter: 3.2pt,',
 ];
 
 for (const group of skills) {
-  lines.push('*' + typstText(group.metadata.category) + ':* ' + group.metadata.items.map(typstText).join(', '));
-  lines.push('#v(0.5pt)');
+  lines.push(
+    '  [#text(weight: "semibold", fill: ink)[' + typstText(group.metadata.category) + ']],',
+    '  [' + group.metadata.items.map(typstText).join(', ') + '],',
+  );
 }
 
-if (projects.length) {
-  lines.push('#section("Selected Portfolio")');
-  for (const project of projects) {
-    lines.push(
-      '#grid(columns: (1fr, auto), gutter: 8pt,',
-      '  [#text(weight: "bold", fill: navy)[' + typstText(project.metadata.title) + ']],',
-      '  [#text(size: 8.4pt, style: "italic", fill: muted)[' + typstText(project.metadata.status) + ']],',
-      ')',
-      '#text(weight: "semibold")[' + typstText(project.metadata.role) + ' | ' + typstText(project.metadata.startedAt) + ']',
-      typstText(project.metadata.summary),
-      '*Technologies:* ' + project.metadata.technologies.map(typstText).join(', '),
-      ...bulletItems(project.content),
-      '#v(3pt)',
-    );
-  }
-}
+lines.push(')');
 
 lines.push('#section("Professional Experience")');
 
 for (const job of experience) {
   lines.push(
-    '#block(breakable: false)[',
+    '#block(above: 2pt, below: 6pt, breakable: false)[',
     '#grid(columns: (1fr, auto), gutter: 8pt,',
-    '  [#text(weight: "bold", fill: navy)[' + typstText(job.metadata.company) + ']],',
-    '  [#text(size: 8.4pt, style: "italic", fill: muted)[' + typstText(job.metadata.startDate) + ' - ' + typstText(job.metadata.endDate) + ']],',
+    '  [#text(size: 10.2pt, weight: "bold", fill: ink)[' + typstText(job.metadata.role) + ']],',
+    '  [#text(size: 8.4pt, fill: muted)[' + typstText(job.metadata.startDate) + ' - ' + typstText(job.metadata.endDate) + ']],',
     ')',
-    '#grid(columns: (1fr, auto), gutter: 8pt,',
-    '  [#text(weight: "semibold")[' + typstText(job.metadata.role) + ']],',
-    '  [#text(size: 8.4pt, fill: muted)[' + typstText(job.metadata.location ?? '') + ']],',
-    ')',
+    '#text(size: 8.7pt, weight: "semibold", fill: accent)[' + typstText(job.metadata.company) + (job.metadata.location ? ' | ' + typstText(job.metadata.location) : '') + ']',
+    '#v(2pt)',
     ...bulletItems(job.content),
-    '#v(3pt)',
     ']',
   );
+}
+
+if (projects.length) {
+  lines.push('#pagebreak(weak: true)', '#section("Selected Portfolio")');
+  for (const project of projects) {
+    lines.push(
+      '#block(above: 2pt, below: 7pt, breakable: false)[',
+      '#grid(columns: (1fr, auto), gutter: 8pt,',
+      '  [#text(size: 10.2pt, weight: "bold", fill: ink)[' + typstText(project.metadata.title) + ']],',
+      '  [#text(size: 8.4pt, fill: muted)[' + typstText(project.metadata.status) + ']],',
+      ')',
+      '#text(size: 8.7pt, weight: "semibold", fill: accent)[' + typstText(project.metadata.role) + ' | ' + typstText(project.metadata.startedAt) + ']',
+      '#v(2pt)',
+      typstText(project.metadata.summary),
+      '#v(1pt)',
+      '#text(size: 8.2pt, fill: muted)[Tech: ' + project.metadata.technologies.map(typstText).join(', ') + ']',
+      ...bulletItems(project.content),
+      ']',
+    );
+  }
 }
 
 if (education.length) {
@@ -179,12 +180,13 @@ if (education.length) {
   for (const entry of education) {
     lines.push(
       '#grid(columns: (1fr, auto), gutter: 8pt,',
-      '  [#text(weight: "bold", fill: navy)[' + typstText(entry.metadata.degree) + ', ' + typstText(entry.metadata.field) + ']],',
-      '  [#text(size: 8.4pt, style: "italic", fill: muted)[' + typstText(entry.metadata.startDate) + ' - ' + typstText(entry.metadata.endDate) + ']],',
+      '  [#text(size: 10.2pt, weight: "bold", fill: ink)[' + typstText(entry.metadata.degree) + ']],',
+      '  [#text(size: 8.4pt, fill: muted)[' + typstText(entry.metadata.startDate) + ' - ' + typstText(entry.metadata.endDate) + ']],',
       ')',
-      '#text(weight: "semibold")[' + typstText(entry.metadata.institution) + ']',
+      '#text(size: 8.7pt, weight: "semibold", fill: accent)[' + typstText(entry.metadata.institution) + ']',
+      '#h(6pt)#text(size: 8.5pt, fill: muted)[' + typstText(entry.metadata.field) + ']',
+      '#v(2pt)',
       typstText(entry.content),
-      '#v(3pt)',
     );
   }
 }
@@ -194,9 +196,11 @@ if (leadership.length) {
   for (const entry of leadership) {
     lines.push(
       '#grid(columns: (1fr, auto), gutter: 8pt,',
-      '  [#text(weight: "bold", fill: navy)[' + typstText(entry.metadata.role) + ', ' + typstText(entry.metadata.organization) + ']],',
-      '  [#text(size: 8.4pt, style: "italic", fill: muted)[' + typstText(entry.metadata.startDate) + ' - ' + typstText(entry.metadata.endDate) + ']],',
+      '  [#text(size: 10.2pt, weight: "bold", fill: ink)[' + typstText(entry.metadata.role) + ']],',
+      '  [#text(size: 8.4pt, fill: muted)[' + typstText(entry.metadata.startDate) + ' - ' + typstText(entry.metadata.endDate) + ']],',
       ')',
+      '#text(size: 8.7pt, weight: "semibold", fill: accent)[' + typstText(entry.metadata.organization) + ']',
+      '#v(2pt)',
       typstText(entry.content),
     );
   }
