@@ -100,7 +100,7 @@ const lines = [
   '#let accent = rgb("#0b72b9")',
   '#set text(font: ("Segoe UI", "Arial"), size: 9.8pt, fill: body)',
   '#set par(leading: 0.7em)',
-  '#set list(indent: 11pt, body-indent: 5.5pt, spacing: 4pt)',
+  '#set list(indent: 11pt, body-indent: 5.5pt, spacing: 3.3pt)',
   '#show link: set text(fill: accent)',
   '#let section(title) = {',
   '  v(11pt)',
@@ -170,11 +170,11 @@ if (leadership.length) {
   }
 }
 
-lines.push('#pagebreak()', '#section("Employment History")');
+lines.push('#pagebreak()', '#set text(size: 9.5pt)', '#section("Employment History")');
 
 for (const job of experience) {
   lines.push(
-    '#block(above: 3pt, below: 9pt, breakable: false)[',
+    '#block(above: 3pt, below: 9pt, breakable: true)[',
     '#grid(columns: (1fr, auto), gutter: 8pt,',
     '  [#text(size: 11pt, weight: "bold", fill: ink)[' + typstText(job.metadata.role) + ']],',
     '  [#text(size: 9.2pt, fill: muted)[' + typstText(job.metadata.startDate) + ' - ' + typstText(job.metadata.endDate) + ']],',
@@ -187,7 +187,7 @@ for (const job of experience) {
 }
 
 if (projects.length) {
-  lines.push('#pagebreak()', '#section("Selected Portfolio")');
+  lines.push('#pagebreak()', '#set text(size: 9.8pt)', '#section("Selected Portfolio")');
   for (const project of projects) {
     lines.push(
       '#block(above: 3pt, below: 10pt, breakable: false)[',

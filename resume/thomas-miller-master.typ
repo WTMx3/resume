@@ -16,7 +16,7 @@
 #let accent = rgb("#0b72b9")
 #set text(font: ("Segoe UI", "Arial"), size: 9.8pt, fill: body)
 #set par(leading: 0.7em)
-#set list(indent: 11pt, body-indent: 5.5pt, spacing: 4pt)
+#set list(indent: 11pt, body-indent: 5.5pt, spacing: 3.3pt)
 #show link: set text(fill: accent)
 #let section(title) = {
   v(11pt)
@@ -89,8 +89,9 @@ Completed a business and technology curriculum focused on application developmen
 #v(3pt)
 Elected to help advance quality engineering practices, testing frameworks, mentorship, and operational excellence.
 #pagebreak()
+#set text(size: 9.5pt)
 #section("Employment History")
-#block(above: 3pt, below: 9pt, breakable: false)[
+#block(above: 3pt, below: 9pt, breakable: true)[
 #grid(columns: (1fr, auto), gutter: 8pt,
   [#text(size: 11pt, weight: "bold", fill: ink)[Senior Software Engineer]],
   [#text(size: 9.2pt, fill: muted)[June 2022 - Present]],
@@ -107,7 +108,7 @@ Elected to help advance quality engineering practices, testing frameworks, mento
 - Create least-privilege AWS IAM policies, remediate unauthorized-access risks, and support a 100% security-audit compliance rate; deliver OAuth 2.0, SSO, 2FA, magic links, temporary codes, and secure session workflows.
 - Translate ambiguous business ideas into executable roadmaps, architecture decisions, delivery plans, and production systems while coordinating stakeholders across engineering, product, operations, and customers.
 ]
-#block(above: 3pt, below: 9pt, breakable: false)[
+#block(above: 3pt, below: 9pt, breakable: true)[
 #grid(columns: (1fr, auto), gutter: 8pt,
   [#text(size: 11pt, weight: "bold", fill: ink)[Software Engineer III]],
   [#text(size: 9.2pt, fill: muted)[June 2020 - July 2022]],
@@ -121,7 +122,7 @@ Elected to help advance quality engineering practices, testing frameworks, mento
 - Contributed to resilient application and service designs aligned with availability, capacity, performance, and maintainability requirements.
 - Guided engineers in SRE, testing, troubleshooting, and quality practices while helping teams adopt stronger engineering standards.
 ]
-#block(above: 3pt, below: 9pt, breakable: false)[
+#block(above: 3pt, below: 9pt, breakable: true)[
 #grid(columns: (1fr, auto), gutter: 8pt,
   [#text(size: 11pt, weight: "bold", fill: ink)[Software Engineer]],
   [#text(size: 9.2pt, fill: muted)[July 2018 - May 2020]],
@@ -138,7 +139,7 @@ Elected to help advance quality engineering practices, testing frameworks, mento
 - Improved page speed, search visibility, accessibility, and data protection across a portfolio of client websites.
 - Translated business requirements into practical technical solutions, managed expectations, and supported client systems through launch and ongoing maintenance.
 ]
-#block(above: 3pt, below: 9pt, breakable: false)[
+#block(above: 3pt, below: 9pt, breakable: true)[
 #grid(columns: (1fr, auto), gutter: 8pt,
   [#text(size: 11pt, weight: "bold", fill: ink)[Software Engineer]],
   [#text(size: 9.2pt, fill: muted)[February 2017 - July 2018]],
@@ -152,7 +153,7 @@ Elected to help advance quality engineering practices, testing frameworks, mento
 - Prepared and released multiple applications through mobile app stores, managed updates, and resolved post-launch technical issues.
 - Introduced reusable patterns and scalable codebase practices that reduced technical debt and shortened debugging time.
 ]
-#block(above: 3pt, below: 9pt, breakable: false)[
+#block(above: 3pt, below: 9pt, breakable: true)[
 #grid(columns: (1fr, auto), gutter: 8pt,
   [#text(size: 11pt, weight: "bold", fill: ink)[IT Support Technician / Supervisor]],
   [#text(size: 9.2pt, fill: muted)[November 2015 - August 2017]],
@@ -166,6 +167,7 @@ Elected to help advance quality engineering practices, testing frameworks, mento
 - Explained technical issues and solutions clearly to people with varied experience while maintaining a service-focused support experience.
 ]
 #pagebreak()
+#set text(size: 9.8pt)
 #section("Selected Portfolio")
 #block(above: 3pt, below: 10pt, breakable: false)[
 #grid(columns: (1fr, auto), gutter: 8pt,
