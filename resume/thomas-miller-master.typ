@@ -9,37 +9,37 @@
   numbering: "1",
   number-align: right,
 )
-#let ink = rgb("#172033")
-#let body = rgb("#3f4b5f")
-#let muted = rgb("#6b778c")
-#let rule = rgb("#dbe3ec")
-#let accent = rgb("#0b72b9")
+#let ink = rgb("#18191b")
+#let body = rgb("#42454a")
+#let muted = rgb("#70747a")
+#let rule = rgb("#d7d7d4")
+#let accent = rgb("#2d2f32")
 #set text(font: ("Segoe UI", "Arial"), size: 9.8pt, fill: body)
 #set par(leading: 0.9em)
-#set list(indent: 11pt, body-indent: 5.5pt, spacing: 6pt, tight: false)
+#set list(indent: 11pt, body-indent: 5.5pt, spacing: 7pt, tight: false)
 #show link: set text(fill: accent)
 #let section(title) = {
   v(11pt)
   grid(columns: (auto, 1fr), gutter: 9pt, align: horizon,
-    text(size: 11.2pt, weight: "bold", fill: ink, tracking: 0.45pt, upper(title)),
+    text(size: 11.4pt, weight: "bold", fill: ink, tracking: 0.55pt, upper(title)),
     line(length: 100%, stroke: 0.55pt + rule),
   )
   v(6.5pt)
 }
 #grid(columns: (1fr, auto), gutter: 20pt, align: top,
-  [#text(size: 25.5pt, weight: "bold", fill: ink)[Thomas Miller]
+  [#text(size: 26.5pt, weight: "bold", fill: ink)[Thomas Miller]
    #v(2.5pt)
-   #text(size: 11.2pt, weight: "semibold", fill: accent)[Senior Software Engineer]
+   #text(size: 11.6pt, weight: "semibold", fill: accent)[Senior Software Engineer]
    #v(2.5pt)
-   #text(size: 9pt, fill: muted)[Platform Engineering  |  DevOps  |  Site Reliability  |  Secure Systems]],
-  [#align(right)[#text(size: 9pt)[
+   #text(size: 9.4pt, fill: muted)[Platform Engineering  |  DevOps  |  Site Reliability  |  Secure Systems]],
+  [#align(right)[#text(size: 9.4pt)[
     #link("mailto:wthomasmiii\@gmail.com")[wthomasmiii\@gmail.com] \
     #link("tel:+19727959884")[(972) 795-9884] \
     #link("https://thomasmiller.cv")[thomasmiller.cv]
   ]]],
 )
 #v(7pt)
-#line(length: 100%, stroke: 1.1pt + accent)
+#line(length: 100%, stroke: 0.9pt + accent)
 #section("Summary")
 Platform-focused engineer with more than 10 years of experience building full-stack products and the systems that keep them reliable: cloud infrastructure, CI/CD, observability, identity and access management, scalable architecture, incident response, and technical leadership.
 #section("Skills")
@@ -99,33 +99,33 @@ Platform-focused engineer with more than 10 years of experience building full-st
 )
 #section("Education")
 #grid(columns: (1fr, auto), gutter: 10pt,
-  [#text(size: 11pt, weight: "bold", fill: ink)[Bachelor of Business Administration (BBA)]],
-  [#text(size: 9.2pt, fill: muted)[Fall 2015 - Spring 2020]],
+  [#text(size: 11.3pt, weight: "bold", fill: ink)[Bachelor of Business Administration (BBA)]],
+  [#text(size: 9.5pt, fill: muted)[Fall 2015 - Spring 2020]],
 )
-#text(size: 9.4pt, weight: "semibold", fill: accent)[Texas Tech University]
-#h(7pt)#text(size: 9.2pt, fill: muted)[Information Technology - Emphasis in Application Development]
+#text(size: 9.7pt, weight: "semibold", fill: accent)[Texas Tech University]
+#h(7pt)#text(size: 9.5pt, fill: muted)[Information Technology - Emphasis in Application Development]
 #v(3pt)
 Completed a business and technology curriculum focused on application development, information systems, and practical software delivery.
 #section("Accolades")
 #grid(columns: (1fr, auto), gutter: 10pt,
-  [#text(size: 11pt, weight: "bold", fill: ink)[Vice President]],
-  [#text(size: 9.2pt, fill: muted)[November 2020 - July 2022]],
+  [#text(size: 11.3pt, weight: "bold", fill: ink)[Vice President]],
+  [#text(size: 9.5pt, fill: muted)[November 2020 - July 2022]],
 )
-#text(size: 9.4pt, weight: "semibold", fill: accent)[Quality Engineering Society, USAA]
+#text(size: 9.7pt, weight: "semibold", fill: accent)[Quality Engineering Society, USAA]
 #v(3pt)
 Elected to help advance quality engineering practices, testing frameworks, mentorship, and operational excellence.
 #pagebreak()
-#set text(size: 9.5pt)
+#set text(size: 10.1pt)
 #section("Employment History")
-#block(above: 3pt, below: 9pt, breakable: true)[
+#block(above: 6pt, below: 15pt, breakable: true)[
 #grid(columns: (1fr, auto), gutter: 8pt,
-  [#text(size: 11pt, weight: "bold", fill: ink)[Senior Software Engineer]],
-  [#text(size: 9.2pt, fill: muted)[June 2022 - Present]],
+  [#text(size: 11.5pt, weight: "bold", fill: ink)[Senior Software Engineer]],
+  [#text(size: 9.6pt, fill: muted)[June 2022 - Present]],
 )
 
-#block(width: 100%, above: 2pt)[#text(size: 9.4pt, weight: "semibold", fill: accent)[BAAS Software | Remote]]
+#block(width: 100%, above: 4pt)[#text(size: 9.8pt, weight: "semibold", fill: accent)[BAAS Software | Remote]]
 
-#block(width: 100%, above: 4pt)[
+#block(width: 100%, above: 6pt)[
 #list(
   [Lead products from initial idea and concept validation through requirements, planning, architecture, implementation, testing, production launch, monitoring, support, and continuous improvement.],
   [Design and build customer-facing web applications, mobile applications, backend services, APIs, data models, automation systems, and internal platforms across the complete software development lifecycle.],
@@ -139,15 +139,15 @@ Elected to help advance quality engineering practices, testing frameworks, mento
 )
 ]
 ]
-#block(above: 3pt, below: 9pt, breakable: true)[
+#block(above: 6pt, below: 15pt, breakable: true)[
 #grid(columns: (1fr, auto), gutter: 8pt,
-  [#text(size: 11pt, weight: "bold", fill: ink)[Software Engineer III]],
-  [#text(size: 9.2pt, fill: muted)[June 2020 - July 2022]],
+  [#text(size: 11.5pt, weight: "bold", fill: ink)[Software Engineer III]],
+  [#text(size: 9.6pt, fill: muted)[June 2020 - July 2022]],
 )
 
-#block(width: 100%, above: 2pt)[#text(size: 9.4pt, weight: "semibold", fill: accent)[USAA | Remote]]
+#block(width: 100%, above: 4pt)[#text(size: 9.8pt, weight: "semibold", fill: accent)[USAA | Remote]]
 
-#block(width: 100%, above: 4pt)[
+#block(width: 100%, above: 6pt)[
 #list(
   [Served as Vice President of the Quality Engineering Society and advanced automated, integration, regression, and performance-testing practices across engineering teams.],
   [Automated deployment pipelines and repeatable development workflows, improving release consistency, service stability, and recovery from change-related failures.],
@@ -158,15 +158,15 @@ Elected to help advance quality engineering practices, testing frameworks, mento
 )
 ]
 ]
-#block(above: 3pt, below: 9pt, breakable: true)[
+#block(above: 6pt, below: 15pt, breakable: true)[
 #grid(columns: (1fr, auto), gutter: 8pt,
-  [#text(size: 11pt, weight: "bold", fill: ink)[Software Engineer]],
-  [#text(size: 9.2pt, fill: muted)[July 2018 - May 2020]],
+  [#text(size: 11.5pt, weight: "bold", fill: ink)[Software Engineer]],
+  [#text(size: 9.6pt, fill: muted)[July 2018 - May 2020]],
 )
 
-#block(width: 100%, above: 2pt)[#text(size: 9.4pt, weight: "semibold", fill: accent)[Web Plant Media | Remote]]
+#block(width: 100%, above: 4pt)[#text(size: 9.8pt, weight: "semibold", fill: accent)[Web Plant Media | Remote]]
 
-#block(width: 100%, above: 4pt)[
+#block(width: 100%, above: 6pt)[
 #list(
   [Developed reusable React component libraries for WordPress themes, giving teams a consistent foundation for navigation, content modules, forms, media, and interactive page experiences.],
   [Designed and built independent WordPress themes with custom templates, responsive layouts, configurable content patterns, and maintainable front-end architecture.],
@@ -180,15 +180,15 @@ Elected to help advance quality engineering practices, testing frameworks, mento
 )
 ]
 ]
-#block(above: 3pt, below: 9pt, breakable: true)[
+#block(above: 6pt, below: 15pt, breakable: true)[
 #grid(columns: (1fr, auto), gutter: 8pt,
-  [#text(size: 11pt, weight: "bold", fill: ink)[Software Engineer]],
-  [#text(size: 9.2pt, fill: muted)[February 2017 - July 2018]],
+  [#text(size: 11.5pt, weight: "bold", fill: ink)[Software Engineer]],
+  [#text(size: 9.6pt, fill: muted)[February 2017 - July 2018]],
 )
 
-#block(width: 100%, above: 2pt)[#text(size: 9.4pt, weight: "semibold", fill: accent)[Caprock Custom Apps]]
+#block(width: 100%, above: 4pt)[#text(size: 9.8pt, weight: "semibold", fill: accent)[Caprock Custom Apps]]
 
-#block(width: 100%, above: 4pt)[
+#block(width: 100%, above: 6pt)[
 #list(
   [Worked directly with clients and cross-functional teams to define requirements, evaluate constraints, shape product scope, and prepare solution plans tied to business outcomes.],
   [Built custom web and mobile applications across front-end interfaces, Node.js and Express services, APIs, integrations, and data workflows.],
@@ -199,15 +199,15 @@ Elected to help advance quality engineering practices, testing frameworks, mento
 )
 ]
 ]
-#block(above: 3pt, below: 9pt, breakable: true)[
+#block(above: 6pt, below: 15pt, breakable: true)[
 #grid(columns: (1fr, auto), gutter: 8pt,
-  [#text(size: 11pt, weight: "bold", fill: ink)[IT Support Technician / Supervisor]],
-  [#text(size: 9.2pt, fill: muted)[November 2015 - August 2017]],
+  [#text(size: 11.5pt, weight: "bold", fill: ink)[IT Support Technician / Supervisor]],
+  [#text(size: 9.6pt, fill: muted)[November 2015 - August 2017]],
 )
 
-#block(width: 100%, above: 2pt)[#text(size: 9.4pt, weight: "semibold", fill: accent)[IT Help Central]]
+#block(width: 100%, above: 4pt)[#text(size: 9.8pt, weight: "semibold", fill: accent)[IT Help Central]]
 
-#block(width: 100%, above: 4pt)[
+#block(width: 100%, above: 6pt)[
 #list(
   [Diagnosed and resolved software, hardware, account, network, and endpoint issues for students, faculty, and staff through walk-up, phone, and on-site support.],
   [Created and maintained searchable troubleshooting documentation used by thousands of Texas Tech University users and support technicians.],
@@ -218,21 +218,21 @@ Elected to help advance quality engineering practices, testing frameworks, mento
 ]
 ]
 #pagebreak()
-#set text(size: 9.8pt)
+#set text(size: 10.2pt)
 #section("Selected Portfolio")
-#block(above: 3pt, below: 10pt, breakable: false)[
+#block(above: 6pt, below: 18pt, breakable: false)[
 #grid(columns: (1fr, auto), gutter: 8pt,
-  [#text(size: 11pt, weight: "bold", fill: ink)[EazyHQ]],
-  [#text(size: 9.2pt, fill: muted)[Active development]],
+  [#text(size: 11.5pt, weight: "bold", fill: ink)[EazyHQ]],
+  [#text(size: 9.6pt, fill: muted)[Active development]],
 )
 
-#block(width: 100%, above: 3pt)[#text(size: 9.4pt, weight: "semibold", fill: accent)[Lead Software Engineer | June 2026]]
+#block(width: 100%, above: 4pt)[#text(size: 9.8pt, weight: "semibold", fill: accent)[Lead Software Engineer | June 2026]]
 
 #block(width: 100%, above: 5pt)[A modular workspace operating system for projects, data, automation, content, and team workflows.]
 
-#block(width: 100%, above: 5pt)[#text(size: 9pt, fill: muted)[Tech: Flutter, Dart, Go, PostgreSQL, Redis, Docker, GitHub Actions, Caddy]]
+#block(width: 100%, above: 6pt)[#text(size: 9.4pt, fill: muted)[Tech: Flutter, Dart, Go, PostgreSQL, Redis, Docker, GitHub Actions, Caddy]]
 
-#block(width: 100%, above: 4pt)[
+#block(width: 100%, above: 6pt)[
 #list(
   [Designed a registry-first add-on architecture with build-time linking and workspace-level enablement.],
   [Built event-driven automation infrastructure covering subscriptions, queued steps, waits, execution logs, and run histories.],
@@ -243,19 +243,19 @@ Elected to help advance quality engineering practices, testing frameworks, mento
 )
 ]
 ]
-#block(above: 3pt, below: 10pt, breakable: false)[
+#block(above: 6pt, below: 18pt, breakable: false)[
 #grid(columns: (1fr, auto), gutter: 8pt,
-  [#text(size: 11pt, weight: "bold", fill: ink)[Listings+]],
-  [#text(size: 9.2pt, fill: muted)[Portfolio snapshot]],
+  [#text(size: 11.5pt, weight: "bold", fill: ink)[Listings+]],
+  [#text(size: 9.6pt, fill: muted)[Portfolio snapshot]],
 )
 
-#block(width: 100%, above: 3pt)[#text(size: 9.4pt, weight: "semibold", fill: accent)[Full-Stack Software Engineer | 2025]]
+#block(width: 100%, above: 4pt)[#text(size: 9.8pt, weight: "semibold", fill: accent)[Full-Stack Software Engineer | 2025]]
 
 #block(width: 100%, above: 5pt)[An AI-assisted real-estate discovery experience that turns natural-language preferences into focused property results.]
 
-#block(width: 100%, above: 5pt)[#text(size: 9pt, fill: muted)[Tech: Next.js, React, TypeScript, Tailwind CSS, Cloudflare, Radix UI]]
+#block(width: 100%, above: 6pt)[#text(size: 9.4pt, fill: muted)[Tech: Next.js, React, TypeScript, Tailwind CSS, Cloudflare, Radix UI]]
 
-#block(width: 100%, above: 4pt)[
+#block(width: 100%, above: 6pt)[
 #list(
   [Created a natural-language property search flow with city autocomplete and structured preference capture.],
   [Developed responsive listing cards, comparison tables, image carousels, and property-detail experiences.],
@@ -265,19 +265,19 @@ Elected to help advance quality engineering practices, testing frameworks, mento
 )
 ]
 ]
-#block(above: 3pt, below: 10pt, breakable: false)[
+#block(above: 6pt, below: 18pt, breakable: false)[
 #grid(columns: (1fr, auto), gutter: 8pt,
-  [#text(size: 11pt, weight: "bold", fill: ink)[PDF Generator Service]],
-  [#text(size: 9.2pt, fill: muted)[Portfolio snapshot]],
+  [#text(size: 11.5pt, weight: "bold", fill: ink)[PDF Generator Service]],
+  [#text(size: 9.6pt, fill: muted)[Portfolio snapshot]],
 )
 
-#block(width: 100%, above: 3pt)[#text(size: 9.4pt, weight: "semibold", fill: accent)[Backend Software Engineer | 2024]]
+#block(width: 100%, above: 4pt)[#text(size: 9.8pt, weight: "semibold", fill: accent)[Backend Software Engineer | 2024]]
 
 #block(width: 100%, above: 5pt)[A TypeScript service that renders structured content into polished PDFs and publishes them to S3-compatible storage.]
 
-#block(width: 100%, above: 5pt)[#text(size: 9pt, fill: muted)[Tech: TypeScript, Express, Puppeteer, AWS SDK, Docker]]
+#block(width: 100%, above: 6pt)[#text(size: 9.4pt, fill: muted)[Tech: TypeScript, Express, Puppeteer, AWS SDK, Docker]]
 
-#block(width: 100%, above: 4pt)[
+#block(width: 100%, above: 6pt)[
 #list(
   [Designed a small Express API for document-generation requests.],
   [Implemented reusable cover and content-page layouts for structured project data.],

@@ -74,7 +74,7 @@ function bulletList(markdown) {
   if (!items.length) return [];
 
   return [
-    '#block(width: 100%, above: 4pt)[',
+    '#block(width: 100%, above: 6pt)[',
     '#list(',
     ...items.map((item) => '  [' + item + '],'),
     ')',
@@ -103,37 +103,37 @@ const lines = [
   '  numbering: "1",',
   '  number-align: right,',
   ')',
-  '#let ink = rgb("#172033")',
-  '#let body = rgb("#3f4b5f")',
-  '#let muted = rgb("#6b778c")',
-  '#let rule = rgb("#dbe3ec")',
-  '#let accent = rgb("#0b72b9")',
+  '#let ink = rgb("#18191b")',
+  '#let body = rgb("#42454a")',
+  '#let muted = rgb("#70747a")',
+  '#let rule = rgb("#d7d7d4")',
+  '#let accent = rgb("#2d2f32")',
   '#set text(font: ("Segoe UI", "Arial"), size: 9.8pt, fill: body)',
   '#set par(leading: 0.9em)',
-  '#set list(indent: 11pt, body-indent: 5.5pt, spacing: 6pt, tight: false)',
+  '#set list(indent: 11pt, body-indent: 5.5pt, spacing: 7pt, tight: false)',
   '#show link: set text(fill: accent)',
   '#let section(title) = {',
   '  v(11pt)',
   '  grid(columns: (auto, 1fr), gutter: 9pt, align: horizon,',
-  '    text(size: 11.2pt, weight: "bold", fill: ink, tracking: 0.45pt, upper(title)),',
+  '    text(size: 11.4pt, weight: "bold", fill: ink, tracking: 0.55pt, upper(title)),',
   '    line(length: 100%, stroke: 0.55pt + rule),',
   '  )',
   '  v(6.5pt)',
   '}',
   '#grid(columns: (1fr, auto), gutter: 20pt, align: top,',
-  '  [#text(size: 25.5pt, weight: "bold", fill: ink)[' + typstText(profile.metadata.name) + ']',
+  '  [#text(size: 26.5pt, weight: "bold", fill: ink)[' + typstText(profile.metadata.name) + ']',
   '   #v(2.5pt)',
-  '   #text(size: 11.2pt, weight: "semibold", fill: accent)[' + typstText(profile.metadata.role) + ']',
+  '   #text(size: 11.6pt, weight: "semibold", fill: accent)[' + typstText(profile.metadata.role) + ']',
   '   #v(2.5pt)',
-  '   #text(size: 9pt, fill: muted)[' + typstText(profile.metadata.tagline) + ']],',
-  '  [#align(right)[#text(size: 9pt)[',
+  '   #text(size: 9.4pt, fill: muted)[' + typstText(profile.metadata.tagline) + ']],',
+  '  [#align(right)[#text(size: 9.4pt)[',
   '    #link("mailto:' + typstText(profile.metadata.email) + '")[' + typstText(profile.metadata.email) + '] \\',
   '    #link("tel:' + typstText(profile.metadata.phoneHref) + '")[' + typstText(profile.metadata.phone) + '] \\',
   '    #link("' + typstText(profile.metadata.website) + '")[' + typstText(profile.metadata.websiteLabel) + ']',
   '  ]]],',
   ')',
   '#v(7pt)',
-  '#line(length: 100%, stroke: 1.1pt + accent)',
+  '#line(length: 100%, stroke: 0.9pt + accent)',
   '#section("Summary")',
   typstText(profile.content),
   '#section("Skills")',
@@ -156,11 +156,11 @@ if (education.length) {
   for (const entry of education) {
     lines.push(
       '#grid(columns: (1fr, auto), gutter: 10pt,',
-      '  [#text(size: 11pt, weight: "bold", fill: ink)[' + typstText(entry.metadata.degree) + ']],',
-      '  [#text(size: 9.2pt, fill: muted)[' + typstText(entry.metadata.startDate) + ' - ' + typstText(entry.metadata.endDate) + ']],',
+      '  [#text(size: 11.3pt, weight: "bold", fill: ink)[' + typstText(entry.metadata.degree) + ']],',
+      '  [#text(size: 9.5pt, fill: muted)[' + typstText(entry.metadata.startDate) + ' - ' + typstText(entry.metadata.endDate) + ']],',
       ')',
-      '#text(size: 9.4pt, weight: "semibold", fill: accent)[' + typstText(entry.metadata.institution) + ']',
-      '#h(7pt)#text(size: 9.2pt, fill: muted)[' + typstText(entry.metadata.field) + ']',
+      '#text(size: 9.7pt, weight: "semibold", fill: accent)[' + typstText(entry.metadata.institution) + ']',
+      '#h(7pt)#text(size: 9.5pt, fill: muted)[' + typstText(entry.metadata.field) + ']',
       '#v(3pt)',
       typstText(entry.content),
     );
@@ -172,27 +172,27 @@ if (leadership.length) {
   for (const entry of leadership) {
     lines.push(
       '#grid(columns: (1fr, auto), gutter: 10pt,',
-      '  [#text(size: 11pt, weight: "bold", fill: ink)[' + typstText(entry.metadata.role) + ']],',
-      '  [#text(size: 9.2pt, fill: muted)[' + typstText(entry.metadata.startDate) + ' - ' + typstText(entry.metadata.endDate) + ']],',
+      '  [#text(size: 11.3pt, weight: "bold", fill: ink)[' + typstText(entry.metadata.role) + ']],',
+      '  [#text(size: 9.5pt, fill: muted)[' + typstText(entry.metadata.startDate) + ' - ' + typstText(entry.metadata.endDate) + ']],',
       ')',
-      '#text(size: 9.4pt, weight: "semibold", fill: accent)[' + typstText(entry.metadata.organization) + ']',
+      '#text(size: 9.7pt, weight: "semibold", fill: accent)[' + typstText(entry.metadata.organization) + ']',
       '#v(3pt)',
       typstText(entry.content),
     );
   }
 }
 
-lines.push('#pagebreak()', '#set text(size: 9.5pt)', '#section("Employment History")');
+lines.push('#pagebreak()', '#set text(size: 10.1pt)', '#section("Employment History")');
 
 for (const job of experience) {
   lines.push(
-    '#block(above: 3pt, below: 9pt, breakable: true)[',
+    '#block(above: 6pt, below: 15pt, breakable: true)[',
     '#grid(columns: (1fr, auto), gutter: 8pt,',
-    '  [#text(size: 11pt, weight: "bold", fill: ink)[' + typstText(job.metadata.role) + ']],',
-    '  [#text(size: 9.2pt, fill: muted)[' + typstText(job.metadata.startDate) + ' - ' + typstText(job.metadata.endDate) + ']],',
+    '  [#text(size: 11.5pt, weight: "bold", fill: ink)[' + typstText(job.metadata.role) + ']],',
+    '  [#text(size: 9.6pt, fill: muted)[' + typstText(job.metadata.startDate) + ' - ' + typstText(job.metadata.endDate) + ']],',
     ')',
     '',
-    '#block(width: 100%, above: 2pt)[#text(size: 9.4pt, weight: "semibold", fill: accent)[' + typstText(job.metadata.company) + (job.metadata.location ? ' | ' + typstText(job.metadata.location) : '') + ']]',
+    '#block(width: 100%, above: 4pt)[#text(size: 9.8pt, weight: "semibold", fill: accent)[' + typstText(job.metadata.company) + (job.metadata.location ? ' | ' + typstText(job.metadata.location) : '') + ']]',
     '',
     ...bulletList(job.content),
     ']',
@@ -200,20 +200,20 @@ for (const job of experience) {
 }
 
 if (projects.length) {
-  lines.push('#pagebreak()', '#set text(size: 9.8pt)', '#section("Selected Portfolio")');
+  lines.push('#pagebreak()', '#set text(size: 10.2pt)', '#section("Selected Portfolio")');
   for (const project of projects) {
     lines.push(
-      '#block(above: 3pt, below: 10pt, breakable: false)[',
+      '#block(above: 6pt, below: 18pt, breakable: false)[',
       '#grid(columns: (1fr, auto), gutter: 8pt,',
-      '  [#text(size: 11pt, weight: "bold", fill: ink)[' + typstText(project.metadata.title) + ']],',
-      '  [#text(size: 9.2pt, fill: muted)[' + typstText(project.metadata.status) + ']],',
+      '  [#text(size: 11.5pt, weight: "bold", fill: ink)[' + typstText(project.metadata.title) + ']],',
+      '  [#text(size: 9.6pt, fill: muted)[' + typstText(project.metadata.status) + ']],',
       ')',
       '',
-      '#block(width: 100%, above: 3pt)[#text(size: 9.4pt, weight: "semibold", fill: accent)[' + typstText(project.metadata.role) + ' | ' + typstText(project.metadata.startedAt) + ']]',
+      '#block(width: 100%, above: 4pt)[#text(size: 9.8pt, weight: "semibold", fill: accent)[' + typstText(project.metadata.role) + ' | ' + typstText(project.metadata.startedAt) + ']]',
       '',
       '#block(width: 100%, above: 5pt)[' + typstText(project.metadata.summary) + ']',
       '',
-      '#block(width: 100%, above: 5pt)[#text(size: 9pt, fill: muted)[Tech: ' + project.metadata.technologies.map(typstText).join(', ') + ']]',
+      '#block(width: 100%, above: 6pt)[#text(size: 9.4pt, fill: muted)[Tech: ' + project.metadata.technologies.map(typstText).join(', ') + ']]',
       '',
       ...bulletList(project.content),
       ']',
