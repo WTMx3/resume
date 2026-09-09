@@ -205,7 +205,7 @@ A TypeScript service that renders structured content into polished PDFs and publ
   [#text(size: 8.4pt, fill: muted)[Fall 2015 - Spring 2020]],
 )
 #text(size: 8.7pt, weight: "semibold", fill: accent)[Texas Tech University]
-#h(6pt)#text(size: 8.5pt, fill: muted)[Information Technology — Emphasis in Application Development]
+#h(6pt)#text(size: 8.5pt, fill: muted)[Information Technology - Emphasis in Application Development]
 #v(2pt)
 Completed a business and technology curriculum focused on application development, information systems, and practical software delivery.
 #section("Leadership")
