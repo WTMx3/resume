@@ -65,11 +65,21 @@ function typstText(input) {
   return Array.from(String(input ?? ''), (character) => replacements.get(character) ?? character).join('');
 }
 
-function bulletItems(markdown) {
-  return markdown
+function bulletList(markdown) {
+  const items = markdown
     .split(/\r?\n/)
     .filter((line) => line.trimStart().startsWith('- '))
-    .map((line) => '- ' + typstText(line.trim().slice(2).replace(/^\*\*.+?:\*\*\s*/, '')));
+    .map((line) => typstText(line.trim().slice(2).replace(/^\*\*.+?:\*\*\s*/, '')));
+
+  if (!items.length) return [];
+
+  return [
+    '#block(width: 100%, above: 4pt)[',
+    '#list(',
+    ...items.map((item) => '  [' + item + '],'),
+    ')',
+    ']',
+  ];
 }
 
 const profile = collection('profile')[0];
@@ -99,8 +109,8 @@ const lines = [
   '#let rule = rgb("#dbe3ec")',
   '#let accent = rgb("#0b72b9")',
   '#set text(font: ("Segoe UI", "Arial"), size: 9.8pt, fill: body)',
-  '#set par(leading: 0.7em)',
-  '#set list(indent: 11pt, body-indent: 5.5pt, spacing: 3.3pt)',
+  '#set par(leading: 0.9em)',
+  '#set list(indent: 11pt, body-indent: 5.5pt, spacing: 6pt, tight: false)',
   '#show link: set text(fill: accent)',
   '#let section(title) = {',
   '  v(11pt)',
@@ -132,8 +142,10 @@ const lines = [
 
 for (const group of skills) {
   lines.push(
-    '  [#text(weight: "semibold", fill: ink)[' + typstText(group.metadata.category) + ']],',
-    '  [' + group.metadata.items.map(typstText).join(', ') + '],',
+    '  [#set par(leading: 0.5em)',
+    '   #text(weight: "semibold", fill: ink)[' + typstText(group.metadata.category) + ']],',
+    '  [#set par(leading: 0.5em)',
+    '   ' + group.metadata.items.map(typstText).join(', ') + '],',
   );
 }
 
@@ -179,9 +191,10 @@ for (const job of experience) {
     '  [#text(size: 11pt, weight: "bold", fill: ink)[' + typstText(job.metadata.role) + ']],',
     '  [#text(size: 9.2pt, fill: muted)[' + typstText(job.metadata.startDate) + ' - ' + typstText(job.metadata.endDate) + ']],',
     ')',
-    '#text(size: 9.4pt, weight: "semibold", fill: accent)[' + typstText(job.metadata.company) + (job.metadata.location ? ' | ' + typstText(job.metadata.location) : '') + ']',
-    '#v(3pt)',
-    ...bulletItems(job.content),
+    '',
+    '#block(width: 100%, above: 2pt)[#text(size: 9.4pt, weight: "semibold", fill: accent)[' + typstText(job.metadata.company) + (job.metadata.location ? ' | ' + typstText(job.metadata.location) : '') + ']]',
+    '',
+    ...bulletList(job.content),
     ']',
   );
 }
@@ -195,12 +208,14 @@ if (projects.length) {
       '  [#text(size: 11pt, weight: "bold", fill: ink)[' + typstText(project.metadata.title) + ']],',
       '  [#text(size: 9.2pt, fill: muted)[' + typstText(project.metadata.status) + ']],',
       ')',
-      '#text(size: 9.4pt, weight: "semibold", fill: accent)[' + typstText(project.metadata.role) + ' | ' + typstText(project.metadata.startedAt) + ']',
-      '#v(3pt)',
-      typstText(project.metadata.summary),
-      '#v(2pt)',
-      '#text(size: 9pt, fill: muted)[Tech: ' + project.metadata.technologies.map(typstText).join(', ') + ']',
-      ...bulletItems(project.content),
+      '',
+      '#block(width: 100%, above: 3pt)[#text(size: 9.4pt, weight: "semibold", fill: accent)[' + typstText(project.metadata.role) + ' | ' + typstText(project.metadata.startedAt) + ']]',
+      '',
+      '#block(width: 100%, above: 5pt)[' + typstText(project.metadata.summary) + ']',
+      '',
+      '#block(width: 100%, above: 5pt)[#text(size: 9pt, fill: muted)[Tech: ' + project.metadata.technologies.map(typstText).join(', ') + ']]',
+      '',
+      ...bulletList(project.content),
       ']',
     );
   }
