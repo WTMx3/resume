@@ -1,7 +1,7 @@
 #set document(
-  title: "Thomas Miller - Software Engineer Senior - Life ALIP",
+  title: "Thomas Miller Resume",
   author: ("Thomas Miller",),
-  description: "Targeted resume for USAA Software Engineer Senior - Life ALIP, job R0118533.",
+  description: "Professional resume for Thomas Miller.",
 )
 
 #set page(

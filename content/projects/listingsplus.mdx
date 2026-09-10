@@ -1,27 +1,30 @@
 ---
 title: Listings+
-summary: An AI-assisted real-estate discovery experience that turns natural-language preferences into focused property results.
+summary: An AI-assisted real-estate platform that turns natural-language intent into structured searches, retrieves live listings, and enriches grounded property results.
 role: Full-Stack Software Engineer
 status: Portfolio snapshot
 startedAt: 2025
 repositoryUrl: https://github.com/WTMx3/listingsplus
-technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Cloudflare", "Radix UI"]
+technologies: ["Next.js", "React", "TypeScript", "Go", "OpenAI API", "PostgreSQL", "Redis", "Typesense", "Docker", "Caddy", "Cloudflare"]
 featured: true
 order: 2
 ---
 
-Listings+ is a responsive property-discovery application designed to make home search feel conversational. A guided request flow captures market, contact, and preference data, then coordinates with configurable search and CRM services to present useful listing results.
+Listings+ is a full-stack property-discovery platform designed to make home search feel conversational. Its AI-assisted retrieval pipeline translates a buyer's free-form preferences into constrained search parameters, retrieves current listings from multiple property sources, and returns enriched, source-grounded results to a responsive web experience.
 
 ## What I built
 
-- Created a natural-language property search flow with city autocomplete and structured preference capture.
-- Developed responsive listing cards, comparison tables, image carousels, and property-detail experiences.
-- Built server-action boundaries for search and lead-submission integrations.
-- Composed accessible, reusable interface primitives with Radix UI, Tailwind CSS, and motion libraries.
-- Prepared the Next.js application for Cloudflare deployment with OpenNext.
+- Designed a RAG-style retrieval workflow that converts natural-language home preferences into validated filters, retrieves live inventory, and grounds the user experience in source property data.
+- Integrated OpenAI chat completions with strict JSON output for bedrooms, bathrooms, price, square footage, amenities, and property types, including graceful fallback when model output or filtered retrieval fails.
+- Built Go API endpoints for AI-assisted home finding, UUID-based result retrieval, and merged property-detail views across eXp Realty, Century 21, and enrichment sources.
+- Persisted search summaries, generated filters, result sets, sources, and timestamps in PostgreSQL with JSONB for traceability and repeatable retrieval.
+- Implemented layered performance controls with Redis caching, in-memory TTL caches, and a PostgreSQL-backed property-detail cache.
+- Added Typesense-powered city lookup, listing normalization, property-detail enrichment, and image aggregation.
+- Developed the Next.js interface with responsive listing cards, comparison tables, image carousels, accessible primitives, and server-action boundaries for search and lead workflows.
+- Containerized PostgreSQL, Redis, Typesense, the Go API, and Caddy; prepared the front end for Cloudflare deployment with OpenNext.
 
 ## Engineering focus
 
-The project highlights product-oriented front-end engineering, third-party service integration, responsive information design, and careful separation between a public interface and private customer systems.
+This is a retrieval-augmented workflow rather than a vector-embedding RAG implementation: the model structures user intent, the API retrieves current source data, and the interface presents grounded results with persisted provenance. The project demonstrates end-to-end product engineering across AI orchestration, external data integration, resilient backend services, caching, deployment, and responsive information design.
 
 The linked repository is a sanitized public portfolio snapshot with customer identity, contact details, tenant identifiers, and production configuration removed.

@@ -10,3 +10,5 @@ The website and Typst resume share the MDX files under `content/` as their canon
 - Add leadership entries in `content/leadership/`.
 
 Run `pnpm resume:source` to regenerate `thomas-miller-master.typ`. Run `pnpm resume:pdf` to regenerate the PDF.
+
+`thomas-miller-resume.typ` is the concise application resume; its generated, upload-ready PDF is `output/pdf/thomas-miller-resume.pdf`.
